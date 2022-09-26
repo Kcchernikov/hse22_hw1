@@ -46,3 +46,16 @@ ls sub* | xargs -P 4 -tI{} fastqc -o fastqc_trimmed {}
 mkdir multiqc_trimmed
 multiqc -o multiqc_trimmed fastqc_trimmed
 ```
+#### 6. Сбор контиг
+```bash
+platanus assemble -o Poil -f sub1.fastq.trimmed sub2.fastq.trimmed 2> assemble.log
+```
+#### 7. Сбор скаффолдов из контигов, а также из подрезанных чтений
+```bash
+platanus scaffold -o Poil -c Poil_contig.fa -b Poil_contigBubble.fa -IP1 sub1.fastq.trimmed sub2.fastq.trimmed -OP2 sub1MP.fastq.int_trimmed sub2MP.fastq.int_trimmed 2> scaffold.log
+```
+#### 8.
+
+
+
+
