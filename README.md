@@ -25,3 +25,24 @@ ls sub* | xargs -P 4 -tI{} fastqc -o fastqc {}
 mkdir multiqc
 multiqc -o multiqc fastqc
 ```
+#### 3. С помощью программ platanus_trim и platanus_internal_trim подрезка чтения по качеству и удаление адаптеров
+
+```bash
+platanus_trim sub1.fastq sub2.fastq
+platanus_internal_trim sub1MP.fastq sub2MP.fastq
+```
+#### 4. Удаление исходных .fastq файлы и полученных с помощью программы seqtk
+
+```bash
+rm oil*
+rm sub1.fastq sub2.fastq sub1MP.fastq sub2MP.fastq
+```
+#### 5. Оценка качества подрезанных чтений и получение статистики при помощи fastQC и multiQC
+
+```bash
+mkdir fastqc_trimmed
+ls sub* | xargs -P 4 -tI{} fastqc -o fastqc_trimmed {}
+
+mkdir multiqc_trimmed
+multiqc -o multiqc_trimmed fastqc_trimmed
+```
