@@ -58,10 +58,16 @@ platanus scaffold -o Poil -c Poil_contig.fa -b Poil_contigBubble.fa -IP1 sub1.fa
 ```bash
 platanus gap_close -o Poil -c Poil_scaffold.fa -IP1 sub1.fastq.trimmed sub2.fastq.trimmed -OP2 sub1MP.fastq.int_trimmed sub2MP.fastq.int_trimmed 2> gapclose.log
 ```
-### 9. Удаление подрезанных чтений
+#### 9. Удаление подрезанных чтений
 ```bash
 rm sub1.fastq.trimmed sub2.fastq.trimmed sub1MP.fastq.int_trimmed sub2MP.fastq.int_trimmed
 ```
+## Отчеты MultiQC
+#### Для исходных
+![](https://github.com/Kcchernikov/hse22_hw1/blob/main/MultiQC.jpg)
+#### Для подрезанных
+![](https://github.com/Kcchernikov/hse22_hw1/blob/main/cut_MultiQC.jpg)
 
+## ![Jupyter notebook](https://github.com/Kcchernikov/hse22_hw1/blob/main/src/Kachernikov.ipynb)
 
 
