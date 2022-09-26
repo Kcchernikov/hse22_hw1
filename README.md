@@ -54,8 +54,14 @@ platanus assemble -o Poil -f sub1.fastq.trimmed sub2.fastq.trimmed 2> assemble.l
 ```bash
 platanus scaffold -o Poil -c Poil_contig.fa -b Poil_contigBubble.fa -IP1 sub1.fastq.trimmed sub2.fastq.trimmed -OP2 sub1MP.fastq.int_trimmed sub2MP.fastq.int_trimmed 2> scaffold.log
 ```
-#### 8.
-
+#### 8. Уменьшение числа гэпов
+```bash
+platanus gap_close -o Poil -c Poil_scaffold.fa -IP1 sub1.fastq.trimmed sub2.fastq.trimmed -OP2 sub1MP.fastq.int_trimmed sub2MP.fastq.int_trimmed 2> gapclose.log
+```
+### 9. Удаление подрезанных чтений
+```bash
+rm sub1.fastq.trimmed sub2.fastq.trimmed sub1MP.fastq.int_trimmed sub2MP.fastq.int_trimmed
+```
 
 
 
